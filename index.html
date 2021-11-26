@@ -94,7 +94,7 @@
           max-height: 85%;
           font: 14px/16px Arial, Helvetica, sans-serif;
           width: 25%;
-          min-width: 350px;
+          min-width: 400px;
           border-radius:20px;
         }
 
@@ -456,7 +456,7 @@
       var currPoster = ''
       if (countryFilter != 0) {
         if (countrylist.includes(countryFilter)){  
-          infohtml = ""
+          infohtml = "<br>"
           // infohtml = "<b>Showing movies from " + countryFilter + "</b>" + "<br><br>";
           for (var i = 0; i < movieData.length; i++) {
             if (movieData[i].term.includes("F")){
@@ -526,8 +526,8 @@
         }
       }
       console.log(infohtml)
-      if (infohtml == "") {
-        infohtml += "<div>There are no movies to show</div>"
+      if (infohtml == "" || infohtml == "<br>") {
+        infohtml += "<div>There were no movies shown from this country/during this term.</div>"
       }
       info2.innerHTML = infohtml;
     }    
