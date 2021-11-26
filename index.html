@@ -501,10 +501,10 @@
         infohtml = ""
 
         toChange = termname;
-        termname = termname.toLowerCase();
-        termname = termname.split(" ")
-        termname = termname.reverse()
-        termname = termname.join("-")
+        toChange = toChange.toLowerCase();
+        toChange = toChange.split(" ")
+        toChange = toChange.reverse()
+        toChange = toChange.join("-")
         for (var i = 0; i < posters.length; i++) {
           if (posters[i].includes(termname)) {
             currPoster = posters[i]
