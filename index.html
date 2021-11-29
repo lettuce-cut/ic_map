@@ -388,24 +388,24 @@
             isTerm = false
             resetList();
             map.closePopup();
-            console.log("ResetA. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("ResetA. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
           else {
             isCountry = false
             updateList(0,$('#term').val());
-            console.log("Next" + isTerm)
+            // console.log("Next" + isTerm)
           }
         }
         else {
           isCountry = true
           if (isTerm == false) {
-            console.log("2. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("2. Country: " + isCountry + '\n' + "Term: " + isTerm)
             $('#Term').val('');
             updateList($('#country').val());
             ddpopup($('#country').val());
           }
           else if (isTerm == true) {
-            console.log("2a. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("2a. Country: " + isCountry + '\n' + "Term: " + isTerm)
             updateList($('#country').val(), $('#term').val());
             ddpopup($('#country').val());
           }
@@ -421,24 +421,24 @@
             isTerm = false
             resetList();
             map.closePopup();
-            console.log("ResetB. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("ResetB. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
           else {
             isTerm = false
             updateList($('#country').val());
-            console.log("Post:" + isCountry)
+            // console.log("Post:" + isCountry)
           }
         }
         else {
           isTerm = true
           if (isCountry == false) {
-            console.log("4. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("4. Country: " + isCountry + '\n' + "Term: " + isTerm)
             $('#country').val('');
             map.closePopup();
             updateList(0,$('#term').val());
           }
           else if (isCountry == true) {
-            console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            // console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
             updateList($('#country').val(), $('#term').val());
             ddpopup($('#country').val());
           }
@@ -506,7 +506,7 @@
         toChange = toChange.reverse()
         toChange = toChange.join("-")
         for (var i = 0; i < posters.length; i++) {
-          if (posters[i].includes(termname)) {
+          if (posters[i].includes(toChange)) {
             currPoster = posters[i]
           }
         }
@@ -525,7 +525,6 @@
           }
         }
       }
-      console.log(infohtml)
       if (infohtml == "" || infohtml == "<br>") {
         infohtml += "<div>There were no movies shown from this country/during this term.</div>"
       }
