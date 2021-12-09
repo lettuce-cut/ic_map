@@ -160,7 +160,7 @@
   <div id="panel" style="overflow-y:scroll;">
     <div id="query">
       <div>
-        <h1 id="h1">Discover movies shown at BYU International Cinema.<br>Use the dropdown to filter movies by the country or the term.</h1>
+        <h1 id="h1">Discover movies shown at BYU International Cinema.<br>Use the dropdown to filter movies by country or semester.</h1>
         <div class="slidecontainer">
           <input type="range" min="1970" max="2020" value="2020" class="slider" id="myRange" step="10">
           <span id="demo"></span>
@@ -170,7 +170,7 @@
         </select>
         <br /><br />
         <select name="term" id="term" class="form-control input-lg">
-          <option value="">Select term</option>
+          <option value="">Select semester</option>
         </select>
       </div>
     </div>
@@ -314,13 +314,13 @@
           '<option value="' + termlist[i] + '">' + termname  + '</option>';
 
           movieinfo += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>" + "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>" + "Country: " + movieData[i].country + "<br> Semester: "+ termname;
         }
         $('#term').append(ddTermhtml);
 
         //generate list
         info2 = document.getElementById("info2");
-        infohtml = '<br>Showing movies from all countries and terms <br><br>';
+        infohtml = '<br>Showing movies from all countries and semesters <br><br>';
         infohtml += movieinfo
         info2.innerHTML = infohtml;
       });
@@ -349,7 +349,7 @@
       });
 
       info2 = document.getElementById("info2");
-      infohtml = '<br>Showing movies from all countries and terms <br><br>';
+      infohtml = '<br>Showing movies from all countries and semesters <br><br>';
       var termname;
       for (var i = 0; i < movieData.length; i++) {
         (movieData[i].term)
@@ -364,7 +364,7 @@
             termname = "Spring/Summer " + movieData[i].term.substring(0,4);
           }
         infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-              "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+              "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
       }
       info2.innerHTML = infohtml;
       $('#country').val('');
@@ -473,13 +473,13 @@
 
               if (movieData[i].country == countryFilter && movieData[i].term == termFilter) {
               infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
               }
             }
             else {
               if (movieData[i].country == countryFilter) {
               infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
               }
             }
           }
@@ -510,7 +510,7 @@
             currPoster = posters[i]
           }
         }
-        infohtml += "<p>Click <a href='" + currPoster + "' target='_blank'>here</a> for the term poster.</p>"
+        infohtml += "<p>Click <a href='" + currPoster + "' target='_blank'>here</a> for the semester poster.</p>"
 
 
         for (var i = 0; i < movieData.length; i++) {
@@ -521,12 +521,12 @@
               });
             }
             infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-              "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+              "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
           }
         }
       }
       if (infohtml == "" || infohtml == "<br>") {
-        infohtml += "<div>There were no movies shown from this country/during this term.</div>"
+        infohtml += "<div>There were no movies shown from this country/during this semester.</div>"
       }
       info2.innerHTML = infohtml;
     }    
@@ -558,24 +558,25 @@
       var radius;
       countries.eachLayer(function(layer) {  
         var props = layer.feature.properties;
-        if (year == "1970"){
-          radius = calcRadius(props[1970]);
-        }
-        else if (year == "1980"){
-          radius = calcRadius(props[1980]); 
-        }
-        else if (year == "1990"){
-          radius = calcRadius(props[1990]); 
-        }
-        else if (year == "2000"){
-          radius = calcRadius(props[2000]); 
-        }
-        else if (year == "2010"){
-          radius = calcRadius(props[2010]); 
-        }
-        else if (year == "2020"){
-          radius = calcRadius(props[2020]); 
-        }
+        radius = calcRadius(props[year]);
+        // if (year == "1970"){
+        //   radius = calcRadius(props[1970]);
+        // }
+        // else if (year == "1980"){
+        //   radius = calcRadius(props[1980]); 
+        // }
+        // else if (year == "1990"){
+        //   radius = calcRadius(props[1990]); 
+        // }
+        // else if (year == "2000"){
+        //   radius = calcRadius(props[2000]); 
+        // }
+        // else if (year == "2010"){
+        //   radius = calcRadius(props[2010]); 
+        // }
+        // else if (year == "2020"){
+        //   radius = calcRadius(props[2020]); 
+        // }
         layer.setRadius(radius);
          
       });
