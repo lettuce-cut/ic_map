@@ -192,6 +192,7 @@
     var cidx = {};
     isCountry = false
     isTerm = false
+    isLang = false
     var posters;
 
     //make map
@@ -276,7 +277,7 @@
     load_json_data();
     
     //loads json file, create dropdowns, and make movie list 
-    function load_json_data(country, term) {
+    function load_json_data(country, term, lang) {
       //load json file
       $.getJSON('movies2.json', function (data) {
         movieData = data;
@@ -333,7 +334,6 @@
               } 
           }
         });
-        console.log(langlist.length)
         for (var i = 0; i < langlist.length; i++){
           
           ddLanghtml +='<option value="' + langlist[i] + '">' + langlist[i] + '</option>';
@@ -402,34 +402,35 @@
 
     
 
-    $('#country, #term', '#lang').on('change', function () {
+    $('#country, #term').on('change', function () {
       if (this.id == 'country') {//IF COUNTRY BUTTON USED
 
-        if ($('#country').val() == ""){
-          if ($('#term').val() == "") {
+        if ($('#country').val() == ""){//IF COUNTRY IS ON
+          if ($('#term').val() == "") {//IF TERM IS
             isCountry = false
             isTerm = false
+            isLang = false
             resetList();
             map.closePopup();
-            // console.log("ResetA. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("ResetA. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
           else {
             isCountry = false
             updateList(0,$('#term').val());
             
-            // console.log("Next" + isTerm)
+            console.log("Next" + isTerm)
           }
         }
-        else {
+        else {//IF COUNTRY IS OFF
           isCountry = true
           if (isTerm == false) {
-            // console.log("2. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("2. Country: " + isCountry + '\n' + "Term: " + isTerm)
             $('#Term').val('');
             updateList($('#country').val());
             ddpopup($('#country').val());
           }
           else if (isTerm == true) {
-            // console.log("2a. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("2a. Country: " + isCountry + '\n' + "Term: " + isTerm)
             updateList($('#country').val(), $('#term').val());
             ddpopup($('#country').val());
           }
@@ -445,24 +446,24 @@
             isTerm = false
             resetList();
             map.closePopup();
-            // console.log("ResetB. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("ResetB. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
           else {
             isTerm = false
             updateList($('#country').val());
-            // console.log("Post:" + isCountry)
+            console.log("Post:" + isCountry)
           }
         }
         else {
           isTerm = true
           if (isCountry == false) {
-            // console.log("4. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("4. Country: " + isCountry + '\n' + "Term: " + isTerm)
             $('#country').val('');
             map.closePopup();
             updateList(0,$('#term').val());
           }
           else if (isCountry == true) {
-            // console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
             updateList($('#country').val(), $('#term').val());
             ddpopup($('#country').val());
           }
@@ -472,8 +473,12 @@
 
 
       if (this.id == 'lang') { //IF LANG BUTTON IS USED
+        console.log("LANG USED")
         if ($('#lang').val() == ""){
           if ($('#country').val() == ""){
+            if($('#term').val()=="") {
+              updateList($('#lang').val());
+            }
             isCountry = false
             isTerm = false
             resetList();
@@ -482,7 +487,7 @@
           }
           else {
             isTerm = false
-            updateList($('#country').val());
+            updateList($('#lang').val());
             // console.log("Post:" + isCountry)
           }
         }
@@ -496,7 +501,7 @@
           }
           else if (isCountry == true) {
             // console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
-            updateList($('#country').val(), $('#term').val());
+            updateList($('#lang').val(), $('#term').val());
             ddpopup($('#country').val());
           }
         }
@@ -509,7 +514,7 @@
           posters = data;
       });
 
-    function updateList(countryFilter = 0, termFilter = 0){
+    function updateList(countryFilter = 0, termFilter = 0, langFilter = 0){
       var termname;
       var currPoster = ''
       if (countryFilter != 0) {
@@ -583,11 +588,44 @@
           }
         }
       }
+
+      else if (langFilter != 0) {
+        if (langlist.includes(langFilter)){  
+          infohtml = "<br>"
+          // infohtml = "<b>Showing movies from " + countryFilter + "</b>" + "<br><br>";
+          for (var i = 0; i < movieData.length; i++) {
+            if (movieData[i].term.includes("F")){
+              termname = "Fall " + movieData[i].term.substring(0,4);
+            }
+            else if (movieData[i].term.includes("W")){
+              termname = "Winter " + movieData[i].term.substring(0,4);
+            }
+            else {
+              termname = "Spring/Summer " + movieData[i].term.substring(0,4);
+            }
+
+            if (isTerm == true) {
+
+              if (movieData[i].languages == langFilter && movieData[i].term == termFilter) {
+              infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+              }
+            }
+            else {
+              if (movieData[i].languages == langFilter) {
+              infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+              }
+            }
+          }
+        }
+      }
       if (infohtml == "" || infohtml == "<br>") {
         infohtml += "<div>There were no movies shown from this country/during this semester.</div>"
       }
       info2.innerHTML = infohtml;
-    }    
+
+      }   
     
 
 
