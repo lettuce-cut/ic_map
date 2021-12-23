@@ -402,68 +402,36 @@
 
     $('#country, #term, #lang').on('change', function () {
       if (this.id == 'country') {//IF COUNTRY BUTTON USED
-        console.log("COUNTRY BUTTON")
+        console.log("COUNTRY BUTTON USED")
 
-        if ($('#country').val() == ""){
-          isCountry = false
-          if ($('#term').val() == "") {
+        if ($('#country').val() == ""){//IF COUNTRY IS ON
+          if ($('#term').val() == "") {//IF TERM IS
+            isCountry = false
             isTerm = false
-            if ($('#lang').val()==""){ // 1 and 2
-                isLang = false
-                resetList();
-                map.closePopup();
-                console.log("Country 1")
-            }
-            else {
-              isLang = true
-              updateList(0,0,$('#lang').val());
-              console.log("Country 2")
-            }
+            isLang = false
+            resetList();
+            map.closePopup();
+            console.log("ResetA. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
-          else {//if 3 and 4
-            isTerm = true
-            if ($('#lang').val()==""){
-              isLang = false
-              resetList();
-              map.closePopup();
-              console.log("Country 3")
-            }
-            else {
-              isLang = true
-              updateList(0,0,$('#lang').val());
-              console.log("Country 4")
-            }
+          else {
+            isCountry = false
+            updateList(0,$('#term').val());
+            
+            console.log("Next" + isTerm)
           }
         }
         else {//IF COUNTRY IS OFF
           isCountry = true
           if (isTerm == false) {
-            $('#term').val('');
-            if (isLang == false) {
-              console.log("Country 5")
-              $('#lang').val('');
-              updateList($('#country').val());
-              ddpopup($('#country').val());
-            }
-            else {
-              console.log("Country 6")
-              updateList($('#country').val(),0, $('#lang').val());
-            }
+            console.log("2. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            $('#Term').val('');
+            updateList($('#country').val());
+            ddpopup($('#country').val());
           }
-          // $('#term').val('');
-          // updateList($('#country').val());
-          // ddpopup($('#country').val());
           else if (isTerm == true) {
-            if (isLang == false) {
-              console.log("Country 7")
-              $('#lang').val('');
-              updateList($('#country').val(), $('#term').val());
-              ddpopup($('#country').val());
-            }
-            else {
-              console.log("Country 8")
-              updateList($('#country').val(), $('#term').val(), $('#lang').val());
-            }
+            console.log("2a. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            updateList($('#country').val(), $('#term').val());
+            ddpopup($('#country').val());
           }
         }
       }
@@ -472,64 +440,29 @@
 
       if (this.id == 'term') { //IF TERM BUTTON USED
         console.log("TERM BUTTON USED")
-
         if ($('#term').val() == ""){
-          isTerm = false
           if ($('#country').val() == ""){
             isCountry = false
-            if (($('#lang').val() == "")) {
-              isLang = false
-              resetList();
-              map.closePopup();
-              console.log("Term 1")
-            }
-            else {
-              isLang = true
-              updateList(0,0,$('#lang').val());
-              console.log("Term 2")
-            }
+            isTerm = false
+            resetList();
+            map.closePopup();
+            console.log("ResetB. Country: " + isCountry + '\n' + "Term: " + isTerm)
           }
           else {
-            isCountry = true
-            if ($('#lang').val()==""){
-              isLang = false
-              resetList();
-              map.closePopup();
-              console.log("Country 3")
-            }
-            else {
-              isLang = true
-              updateList(0,0,$('#lang').val());
-              console.log("Country 4")
-            }
+            isTerm = false
+            updateList($('#country').val());
+            console.log("Post:" + isCountry)
           }
         }
         else {
           isTerm = true
           if (isCountry == false) {
-            $('#term').val('');
-            if (isLang == false) {
-              console.log("Term 5")  
-              $('#lang').val('');
-              map.closePopup();
-              updateList(0,$('#term').val());
-            }
-            else {
-              console.log("Term 6")
-              updateList(0, $('#term').val(), $('#lang').val());
-            }
+            console.log("4. Country: " + isCountry + '\n' + "Term: " + isTerm)
+            $('#country').val('');
+            map.closePopup();
+            updateList(0,$('#term').val());
           }
           else if (isCountry == true) {
-            if (isLang == false) {
-              console.log("Term 7")
-              $('#lang').val('');
-              updateList($('#country').val(), $('#term').val());
-              ddpopup($('#country').val());
-            }
-            else {
-              console.log("Term 8")
-              updateList($('#country').val(), $('#term').val(), $('#lang').val());
-            }
             console.log("4a. Country: " + isCountry + '\n' + "Term: " + isTerm)
             updateList($('#country').val(), $('#term').val());
             ddpopup($('#country').val());
