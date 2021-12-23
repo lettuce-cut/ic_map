@@ -21,6 +21,7 @@
     <style>
         #h1{
           font: 14px Arial, Helvetica, sans-serif;
+          color: #b3b3b3;
         }
         body {
           padding: 0;
@@ -48,23 +49,6 @@
           right: 1px;
           top: 180px;
         }
-        #topbar { position: absolute;
-          z-index: 50;
-          top: 0;
-          left: 0;
-          height: 30px;
-          right: 0px;
-          bottom: 10px;
-          background: white;
-          background-color: rgb(255, 255, 255);
-          color: #a6130e;
-          text-transform:uppercase;
-          padding: 6px 8px;
-          font: 20px Arial, Helvetica, sans-serif;
-          font-weight: bold;
-          vertical-align: middle;
-          line-height: 30px;     
-        }
 
         .leaflet-control-zoom{
           top: 40px;
@@ -91,7 +75,7 @@
           z-index: 1000;
           background: rgba(255,255,255,0.85);
           padding: 1em;
-          max-height: 85%;
+          max-height: 60%;
           font: 14px/16px Arial, Helvetica, sans-serif;
           width: 25%;
           min-width: 400px;
@@ -108,16 +92,28 @@
           clear:both;
         }
 
-        .slidecontainer {
-          width: 100%; /* Width of the outside container */
+        .panel2 {
+          position: absolute;
+          /* bottom: 50px;
+          right: 10px; */
+          bottom: 50px;
+          left: 10px;
+          z-index: 1000;
+          background: rgba(34, 34, 34, 0.55);
+          padding: 1em;
+          max-height: 30%;
+          font: 14px/16px Arial, Helvetica, sans-serif;
+          width: 25%;
+          min-width: 400px;
+          border-radius:20px;
         }
-
         .slider {
           -webkit-appearance: none;
           width: 80%;
           height: 12px;
           border-radius: 5px;  
-          background: #b3b3b3;
+          /* background: #6e6e6e; */
+          background: rgba(80, 80, 80, 0.8);
           outline: none;
           opacity: 0.8;
           -webkit-transition: .2s;
@@ -130,7 +126,8 @@
           width: 20px;
           height: 20px;
           border-radius: 50%; 
-          background: #a6130e;
+          /* background: #a6130e; */
+          background: rgb(255, 105, 105, 0.8);
           cursor: pointer;
         }
 
@@ -143,9 +140,11 @@
         }
 
         #demo {
-          color: #a6130e;
+          color: rgb(255, 105, 105, 0.8);
           font-weight: bold;
         }
+
+
         #country, #term, #lang {
           border-radius: 10px;
           padding: 2px;
@@ -157,14 +156,10 @@
 
 <body>
   <div id="map"></div>
-  <div id="panel" style="overflow-y:scroll;">
-    <div id="query">
-      <div>
-        <h1 id="h1">Discover movies shown at BYU International Cinema.<br>Use the dropdown to filter movies by country, semester, or language.</h1>
-        <div class="slidecontainer">
-          <input type="range" min="1970" max="2020" value="2020" class="slider" id="myRange" step="10">
-          <span id="demo"></span>
-        </div> <br>
+  <div class='right'>
+    <div id="panel" style="overflow-y:scroll;">
+      <div id="query">
+        <!-- <h1 id="h1">Discover movies shown at BYU International Cinema.<br>Use the dropdowns to filter movies by country, semester, and/or language.</h1> -->
         <select name="country" id="country" class="form-control input-lg">
           <option value="">Select country</option>
         </select>
@@ -177,10 +172,13 @@
           <option value="">Select language</option>
         </select>
       </div>
+      <div id="info2"></div>
     </div>
-    <div id="info2">
-
-    </div>
+    <div class="panel2">
+      <h1 id='h1'>Total number of movies shown at IC (by decade)</h1>
+      <input type="range" min="1970" max="2020" value="2020" class="slider" id="myRange" step="10">
+      <span id="demo"></span>
+    </div> <br>
   </div>
   
   
