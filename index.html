@@ -238,8 +238,8 @@
       var country = layer.feature.properties.COUNTRY;
       updateList(country);
       $('#country').val(country);
-      $('#term').val('');
-      //ADD LANG????
+      // $('#term').val('');
+      // ADD LANG????
     }
 
     
@@ -255,11 +255,11 @@
     }
 
     //Reset list on click - uh not really sure but it runs when you just click on the map...?
-    function onMapClick(e) {    
-      resetList();
-	  }
+    // function onMapClick(e) {    
+    //   resetList();
+	  // }
 
-    map.on('click', onMapClick);
+    // map.on('click', onMapClick);
 
     // dropdown 
     var movieData = [];
