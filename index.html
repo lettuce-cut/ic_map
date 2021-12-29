@@ -340,7 +340,8 @@
 
         //generate list
         info2 = document.getElementById("info2");
-        infohtml = '<br>Showing movies from all countries and semesters <br><br>';
+        infohtml = "<br>"
+        // infohtml = "<br>Showing all movies ever shown at BYU's International Cinema<br><br>";
         infohtml += movieinfo
         info2.innerHTML = infohtml;
       });
@@ -369,7 +370,8 @@
       });
 
       info2 = document.getElementById("info2");
-      infohtml = '<br>Showing movies from all countries and semesters <br><br>';
+      infohtml = "<br>"
+      // infohtml = "<br>Showing all movies ever shown at BYU's International Cinema<br><br>";
       var termname;
       for (var i = 0; i < movieData.length; i++) {
         (movieData[i].term)
@@ -605,45 +607,39 @@
       var termname;
       var currPoster = ''
 
-      // if (countryFilter != 0) {
-      //   console.log("USING COUNTRY FILTER")
-      //   infohtml = "<br>"
-      //   if (termFilter != 0) {
-      //     if (langFilter != 0) {
-      //       for (var i = 0; i < movieData.length; i++) {
-      //         if (movieData[i].term.includes("F")){
-      //           termname = "Fall " + movieData[i].term.substring(0,4);
-      //         }
-      //         else if (movieData[i].term.includes("W")){
-      //           termname = "Winter " + movieData[i].term.substring(0,4);
-      //         }
-      //         else {
-      //           termname = "Spring/Summer " + movieData[i].term.substring(0,4);
-      //         }
-      //       }
-      //     }
-      //     else {
-
-      //     }
-      //   }
-      //   else {
-      //     if (langFilter != 0) {
-
-      //     }
-      //     else {
-
-      //     }
-      //   }
-
-      //   if (countrylist.includes(countryFilter)){  
-          
-      //   }
-      // }
-
       if (countryFilter != 0) {
         if (countrylist.includes(countryFilter)){  
           infohtml = "<br>"
-          // infohtml = "<b>Showing movies from " + countryFilter + "</b>" + "<br><br>";
+
+          if (isTerm) {
+            // infohtml += "<b>Showing movies from " + countryFilter + "</b>" + "<br>";
+            if (termFilter.includes("F")){
+              termname = "Fall " + termFilter.substring(0,4);
+            }
+            else if (termFilter.includes("W")){
+              termname = "Winter " + termFilter.substring(0,4);
+            }
+            else {
+              termname = "Spring/Summer " + termFilter.substring(0,4);
+            }
+              
+            // infohtml = "<b>Showing movies from " + termname + "</b>" + "<br>";
+            toChange = termname;
+            toChange = toChange.toLowerCase();
+            toChange = toChange.split(" ")
+            toChange = toChange.reverse()
+            toChange = toChange.join("-")
+            for (var k = 0; k < posters.length; k++) {
+              if (posters[k].includes(toChange)) {
+                currPoster = posters[k]
+              }
+            }
+            infohtml += "<p>Click <a href='" + currPoster + "' target='_blank'>here</a> for the semester poster.</p>"
+          }
+          // else {
+          //   infohtml += "<b>Showing movies from " + countryFilter + "</b>" + "<br><br>";
+          // }
+
           for (var i = 0; i < movieData.length; i++) {
             if (movieData[i].term.includes("F")){
               termname = "Fall " + movieData[i].term.substring(0,4);
@@ -655,32 +651,46 @@
               termname = "Spring/Summer " + movieData[i].term.substring(0,4);
             }
 
+
+            counter = 0
+            for (var j = 0; j < movieData[i].languages.length; j++){
+              if (langFilter == movieData[i].languages[j]) {
+                counter++
+              }
+            }
+
             if (isTerm == true) {
-              console.log("TERM IS TRURE")
-              infohtml = ""
-              toChange = termname;
-              toChange = toChange.toLowerCase();
-              toChange = toChange.split(" ")
-              toChange = toChange.reverse()
-              toChange = toChange.join("-")
-                for (var i = 0; i < posters.length; i++) {
-                  if (posters[i].includes(toChange)) {
-                    currPoster = posters[i]
-                  }
-                }
-                infohtml += "<p>Click <a href='" + currPoster + "' target='_blank'>here</a> for the semester poster.</p>"
+              
               if (isLang == true) {
-                for (var j = 0; j < movieData[i].languages.length; j++) {
-                  if (movieData[i].languages[j] == langFilter) {
-                    infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>" + "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
-                  }
+                if (movieData[i].country == countryFilter && movieData[i].term == termFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                if (movieData[i].country == countryFilter && movieData[i].term == termFilter) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
                 }
               }
             }
+
             else {
-              if (movieData[i].country == countryFilter) {
-              infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+              if (isLang) {
+                if (movieData[i].country == countryFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                    "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                    "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                if (movieData[i].country == countryFilter) {
+                infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
               }
             }
           }
@@ -688,7 +698,6 @@
       }
 
       else if (termFilter != 0) {
-        console.log("USING TERM FILTER")
         if (termFilter.includes("F")){
           termname = "Fall " + termFilter.substring(0,4);
         }
@@ -717,21 +726,89 @@
 
         for (var i = 0; i < movieData.length; i++) {
           if (movieData[i].term == termFilter){
+            counter = 0
+            for (var j = 0; j < movieData[i].languages.length; j++){
+              if (langFilter == movieData[i].languages[j]) {
+                counter++
+              }
+            }
             if (movieData[i].country in cidx){
               cidx[movieData[i].country].setStyle({
                 color: '#00FFFF',       
               });
             }
-            infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-              "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+
+            if (isCountry) {
+              if (isLang) {
+                if (movieData[i].country == countryFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                if (movieData[i].country == countryFilter) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+            }
+            
+            else {
+              if (isLang){
+                if (counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+              }
+            }
           }
         }
       }
 
+
+
+
       else if (langFilter != 0) {
-        console.log("USING LANG FILTER")
         if (langlist.includes(langFilter)){  
           infohtml = "<br>"
+
+          if (isTerm) {
+            if (termFilter.includes("F")){
+              termname = "Fall " + termFilter.substring(0,4);
+            }
+            else if (termFilter.includes("W")){
+              termname = "Winter " + termFilter.substring(0,4);
+            }
+            else {
+              termname = "Spring/Summer " + termFilter.substring(0,4);
+            }
+              
+            // infohtml = "<b>Showing movies from " + termname + "</b>" + "<br>";
+            toChange = termname;
+            toChange = toChange.toLowerCase();
+            toChange = toChange.split(" ")
+            toChange = toChange.reverse()
+            toChange = toChange.join("-")
+            for (var k = 0; k < posters.length; k++) {
+              if (posters[k].includes(toChange)) {
+                currPoster = posters[k]
+              }
+            }
+            // infohtml += "<b>Showing movies in " + langFilter + "</b>" + "<br>";
+            infohtml += "<p>Click <a href='" + currPoster + "' target='_blank'>here</a> for the semester poster.</p>"
+          }
+          // else {
+          //   infohtml += "<b>Showing movies in " + langFilter + "</b>" + "<br><br>";
+          // }
+
           for (var i = 0; i < movieData.length; i++) {
             if (movieData[i].term.includes("F")){
               termname = "Fall " + movieData[i].term.substring(0,4);
@@ -743,26 +820,57 @@
               termname = "Spring/Summer " + movieData[i].term.substring(0,4);
             }
 
-            if (isTerm == true) {
-
-              if (movieData[i].languages == langFilter && movieData[i].term == termFilter) {
-              infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+            counter = 0
+            for (var j = 0; j < movieData[i].languages.length; j++){
+              if (langFilter == movieData[i].languages[j]) {
+                counter++
               }
             }
-            else {
-              if (movieData[i].languages == langFilter) {
-              infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+
+            if (isCountry == true) {
+              if (isTerm == true) {
+                if (movieData[i].country == countryFilter && movieData[i].term == termFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
                 "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                if (movieData[i].country == countryFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+            }
+
+            else {
+              if (isTerm) {
+                if (movieData[i].term == termFilter && counter > 0) {
+                  infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                    "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                    "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
+              }
+              else {
+                if (counter > 0) {
+                infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Term: "+ termname;
+                  "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>"+ "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                }
               }
             }
           }
         }
       }
-      if (infohtml == "" || infohtml == "<br>") {
-        infohtml += "<div>There were no movies shown that match the chosen filters.</div>"
+
+      console.log (infohtml.length);
+      if (infohtml.length < 120) {
+        console.log (infohtml.length);
+        infohtml = "<br><div>There were no movies shown that match the chosen filters.</div>"
       }
       info2.innerHTML = infohtml;
+
 
       }   
     
