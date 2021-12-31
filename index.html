@@ -236,8 +236,9 @@
     function highlight(e) {
       let layer = e.target;
       var country = layer.feature.properties.COUNTRY;
-      updateList(country);
+      updateList(country, $('#term').val(), $('#lang').val());
       $('#country').val(country);
+      isCountry = true
       // $('#term').val('');
       // ADD LANG????
     }
