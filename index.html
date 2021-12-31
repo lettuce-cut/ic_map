@@ -399,7 +399,6 @@
     function ddpopup(country){
       cidx[country].openPopup();
     }
-
     
 
     $('#country, #term, #lang').on('change', function () {
@@ -426,7 +425,8 @@
             isTerm = true
             if ($('#lang').val()==""){
               isLang = false
-              resetList();
+              // resetList();
+              updateList(0,$('#term').val())
               map.closePopup();
               console.log("Country 3" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
             }
@@ -492,14 +492,15 @@
             isCountry = true
             if ($('#lang').val()==""){
               isLang = false
-              resetList();
+              // resetList();
+              updateList($('#country').val())
               map.closePopup();
-              console.log("Country 3" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
+              console.log("Term 3" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
             }
             else {
               isLang = true
               updateList($('#country').val(),0,$('#lang').val());
-              console.log("Country 4" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
+              console.log("Term 4" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
             }
           }
         }
@@ -556,13 +557,13 @@
             isCountry = true
             if ($('#term').val() == "") {
               isTerm = false
-              resetList();
+              updateList($('#country').val());
               map.closePopup();
               console.log("Lang 3" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
             }
             else {
               isTerm = true
-              updateList(0,$('#term').val());
+              updateList($('#country').val(),$('#term').val());
               console.log("Lang 4" + '\nisCountry' + isCountry + '\nisTerm' + isTerm + '\nisLang' + isLang)
             }
           }
@@ -698,6 +699,13 @@
       }
 
       else if (termFilter != 0) {
+
+        for (i in cidx) {
+          cidx[i].setStyle({
+            color: '#9a4a48',       
+          });
+        }
+
         if (termFilter.includes("F")){
           termname = "Fall " + termFilter.substring(0,4);
         }
@@ -725,6 +733,8 @@
 
 
         for (var i = 0; i < movieData.length; i++) {
+
+
           if (movieData[i].term == termFilter){
             counter = 0
             for (var j = 0; j < movieData[i].languages.length; j++){
@@ -732,6 +742,7 @@
                 counter++
               }
             }
+
             if (movieData[i].country in cidx){
               cidx[movieData[i].country].setStyle({
                 color: '#00FFFF',       
@@ -864,9 +875,7 @@
         }
       }
 
-      console.log (infohtml.length);
       if (infohtml.length < 120) {
-        console.log (infohtml.length);
         infohtml = "<br><div>There were no movies shown that match the chosen filters.</div>"
       }
       info2.innerHTML = infohtml;

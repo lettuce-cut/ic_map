@@ -437,12 +437,12 @@
           termname = "Spring/Summer " + filter.substring(0,4);
         }
         infohtml = "<b>" + termname + "</b>" + "<br><br>";
+        
         for (var i = 0; i < movieData.length; i++) {
           if (movieData[i].term == filter){
             if (movieData[i].country in cidx){
               cidx[movieData[i].country].setStyle({
                 color: '#00FFFF',
-                
               });
             }
             infohtml += "<div class='movie'><img src=" + movieData[i].poster + " width='50'>"+
