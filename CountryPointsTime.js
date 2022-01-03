@@ -1,35 +1,35 @@
 var countrypoints = {
   "type" : "FeatureCollection",
   "features" : [
-    {
-      "type" : "Feature",
-      "id" : 1,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -91.238770400607251,
-          15.010383625435361
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 1,
-        "COUNTRY" : "Guatemala",
-        "ISO" : "GT",
-        "COUNTRYAFF" : "Guatemala",
-        "AFF_ISO" : "GT",
-        "Country_1" : "Guatemala",
-        "Count_" : 1,
-        "ObjectID_1" : 34,
-        "GlobalID" : "b4e2c498-155f-4c64-8087-a4b633ae60db",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 3,
-        "1970" : 0,
-        "ORIG_FID" : 0
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 1,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       -91.238770400607251,
+    //       15.010383625435361
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 1,
+    //     "COUNTRY" : "Guatemala",
+    //     "ISO" : "GT",
+    //     "COUNTRYAFF" : "Guatemala",
+    //     "AFF_ISO" : "GT",
+    //     "Country_1" : "Guatemala",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 34,
+    //     "GlobalID" : "b4e2c498-155f-4c64-8087-a4b633ae60db",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 3,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 0
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 2,
@@ -378,64 +378,64 @@ var countrypoints = {
         "ORIG_FID" : 12
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 14,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -1.2072187605453819,
-          7.9702602938419798
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 14,
-        "COUNTRY" : "Ghana",
-        "ISO" : "GH",
-        "COUNTRYAFF" : "Ghana",
-        "AFF_ISO" : "GH",
-        "Country_1" : "Ghana",
-        "Count_" : 1,
-        "ObjectID_1" : 32,
-        "GlobalID" : "f3ae6be5-14b1-45f2-adf1-a789bba960b8",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 13
-      }
-    },
-    {
-      "type" : "Feature",
-      "id" : 15,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -14.412361313971672,
-          12.124771229660048
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 15,
-        "COUNTRY" : "Guinea-Bissau",
-        "ISO" : "GW",
-        "COUNTRYAFF" : "Guinea-Bissau",
-        "AFF_ISO" : "GW",
-        "Country_1" : "Guinea-Bissau",
-        "Count_" : 1,
-        "ObjectID_1" : 35,
-        "GlobalID" : "e21f1cf3-ee05-4ff9-9a67-6cdcb9f3dce6",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 14
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 14,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       -1.2072187605453819,
+    //       7.9702602938419798
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 14,
+    //     "COUNTRY" : "Ghana",
+    //     "ISO" : "GH",
+    //     "COUNTRYAFF" : "Ghana",
+    //     "AFF_ISO" : "GH",
+    //     "Country_1" : "Ghana",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 32,
+    //     "GlobalID" : "f3ae6be5-14b1-45f2-adf1-a789bba960b8",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 13
+    //   }
+    // },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 15,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       -14.412361313971672,
+    //       12.124771229660048
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 15,
+    //     "COUNTRY" : "Guinea-Bissau",
+    //     "ISO" : "GW",
+    //     "COUNTRYAFF" : "Guinea-Bissau",
+    //     "AFF_ISO" : "GW",
+    //     "Country_1" : "Guinea-Bissau",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 35,
+    //     "GlobalID" : "e21f1cf3-ee05-4ff9-9a67-6cdcb9f3dce6",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 14
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 16,
@@ -465,35 +465,35 @@ var countrypoints = {
         "ORIG_FID" : 15
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 17,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -10.31933230752267,
-          20.34767234432886
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 17,
-        "COUNTRY" : "Mauritania",
-        "ISO" : "MR",
-        "COUNTRYAFF" : "Mauritania",
-        "AFF_ISO" : "MR",
-        "Country_1" : "Mauritania",
-        "Count_" : 1,
-        "ObjectID_1" : 52,
-        "GlobalID" : "16f6291b-37ec-4327-8e6c-d935ad30933e",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 16
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 17,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       -10.31933230752267,
+    //       20.34767234432886
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 17,
+    //     "COUNTRY" : "Mauritania",
+    //     "ISO" : "MR",
+    //     "COUNTRYAFF" : "Mauritania",
+    //     "AFF_ISO" : "MR",
+    //     "Country_1" : "Mauritania",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 52,
+    //     "GlobalID" : "16f6291b-37ec-4327-8e6c-d935ad30933e",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 16
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 18,
@@ -813,35 +813,35 @@ var countrypoints = {
         "ORIG_FID" : 27
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 29,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          12.746536530022803,
-          5.7038265706938374
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 29,
-        "COUNTRY" : "Cameroon",
-        "ISO" : "CM",
-        "COUNTRYAFF" : "Cameroon",
-        "AFF_ISO" : "CM",
-        "Country_1" : "Cameroon",
-        "Count_" : 1,
-        "ObjectID_1" : 14,
-        "GlobalID" : "f50f1271-8dfc-4f02-ae21-2f21175067e7",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 28
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 29,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       12.746536530022803,
+    //       5.7038265706938374
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 29,
+    //     "COUNTRY" : "Cameroon",
+    //     "ISO" : "CM",
+    //     "COUNTRYAFF" : "Cameroon",
+    //     "AFF_ISO" : "CM",
+    //     "Country_1" : "Cameroon",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 14,
+    //     "GlobalID" : "f50f1271-8dfc-4f02-ae21-2f21175067e7",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 28
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 30,
@@ -929,35 +929,35 @@ var countrypoints = {
         "ORIG_FID" : 31
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 33,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          39.611300271654152,
-          8.6563410850479876
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 33,
-        "COUNTRY" : "Ethiopia",
-        "ISO" : "ET",
-        "COUNTRYAFF" : "Ethiopia",
-        "AFF_ISO" : "ET",
-        "Country_1" : "Ethiopia",
-        "Count_" : 1,
-        "ObjectID_1" : 27,
-        "GlobalID" : "9342c6a3-b504-44b4-9f55-f579e9ffab40",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 32
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 33,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       39.611300271654152,
+    //       8.6563410850479876
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 33,
+    //     "COUNTRY" : "Ethiopia",
+    //     "ISO" : "ET",
+    //     "COUNTRYAFF" : "Ethiopia",
+    //     "AFF_ISO" : "ET",
+    //     "Country_1" : "Ethiopia",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 27,
+    //     "GlobalID" : "9342c6a3-b504-44b4-9f55-f579e9ffab40",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 32
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 34,
@@ -1074,35 +1074,35 @@ var countrypoints = {
         "ORIG_FID" : 36
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 38,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          29.976678380580903,
-          16.08673312118211
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 38,
-        "COUNTRY" : "Sudan",
-        "ISO" : "SD",
-        "COUNTRYAFF" : "Sudan",
-        "AFF_ISO" : "SD",
-        "Country_1" : "Sudan",
-        "Count_" : 1,
-        "ObjectID_1" : 80,
-        "GlobalID" : "1e35675c-348f-4d83-94a7-580342771822",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 37
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 38,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       29.976678380580903,
+    //       16.08673312118211
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 38,
+    //     "COUNTRY" : "Sudan",
+    //     "ISO" : "SD",
+    //     "COUNTRYAFF" : "Sudan",
+    //     "AFF_ISO" : "SD",
+    //     "Country_1" : "Sudan",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 80,
+    //     "GlobalID" : "1e35675c-348f-4d83-94a7-580342771822",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 37
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 39,
@@ -1567,64 +1567,64 @@ var countrypoints = {
         "ORIG_FID" : 165
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 167,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          20.797436741777574,
-          44.058819663009373
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 167,
-        "COUNTRY" : "Serbia",
-        "ISO" : "RS",
-        "COUNTRYAFF" : "Serbia",
-        "AFF_ISO" : "RS",
-        "Country_1" : "Serbia",
-        "Count_" : 1,
-        "ObjectID_1" : 73,
-        "GlobalID" : "d8a94b04-b754-4819-aa3b-1d850036d89a",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 166
-      }
-    },
-    {
-      "type" : "Feature",
-      "id" : 168,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          19.496838041870948,
-          48.712467143308743
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 168,
-        "COUNTRY" : "Slovakia",
-        "ISO" : "SK",
-        "COUNTRYAFF" : "Slovakia",
-        "AFF_ISO" : "SK",
-        "Country_1" : "Slovakia",
-        "Count_" : 1,
-        "ObjectID_1" : 75,
-        "GlobalID" : "d2c67a29-48a4-4452-b5a3-73df5309a304",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 167
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 167,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       20.797436741777574,
+    //       44.058819663009373
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 167,
+    //     "COUNTRY" : "Serbia",
+    //     "ISO" : "RS",
+    //     "COUNTRYAFF" : "Serbia",
+    //     "AFF_ISO" : "RS",
+    //     "Country_1" : "Serbia",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 73,
+    //     "GlobalID" : "d8a94b04-b754-4819-aa3b-1d850036d89a",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 166
+    //   }
+    // },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 168,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       19.496838041870948,
+    //       48.712467143308743
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 168,
+    //     "COUNTRY" : "Slovakia",
+    //     "ISO" : "SK",
+    //     "COUNTRYAFF" : "Slovakia",
+    //     "AFF_ISO" : "SK",
+    //     "Country_1" : "Slovakia",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 75,
+    //     "GlobalID" : "d2c67a29-48a4-4452-b5a3-73df5309a304",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 167
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 169,
@@ -1770,35 +1770,35 @@ var countrypoints = {
         "ORIG_FID" : 172
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 174,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          43.356890801477128,
-          42.058958477735544
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 174,
-        "COUNTRY" : "Georgia",
-        "ISO" : "GE",
-        "COUNTRYAFF" : "Georgia",
-        "AFF_ISO" : "GE",
-        "Country_1" : "Georgia",
-        "Count_" : 3,
-        "ObjectID_1" : 30,
-        "GlobalID" : "d2b15be2-bdb6-4b29-a7db-27b15804c157",
-        "2020" : 3,
-        "2010" : 2,
-        "2000" : 2,
-        "1990" : 2,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 173
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 174,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       43.356890801477128,
+    //       42.058958477735544
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 174,
+    //     "COUNTRY" : "Georgia",
+    //     "ISO" : "GE",
+    //     "COUNTRYAFF" : "Georgia",
+    //     "AFF_ISO" : "GE",
+    //     "Country_1" : "Georgia",
+    //     "Count_" : 3,
+    //     "ObjectID_1" : 30,
+    //     "GlobalID" : "d2b15be2-bdb6-4b29-a7db-27b15804c157",
+    //     "2020" : 3,
+    //     "2010" : 2,
+    //     "2000" : 2,
+    //     "1990" : 2,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 173
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 175,
@@ -1944,35 +1944,35 @@ var countrypoints = {
         "ORIG_FID" : 178
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 180,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          83.922987274071332,
-          28.265473743232754
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 180,
-        "COUNTRY" : "Nepal",
-        "ISO" : "NP",
-        "COUNTRYAFF" : "Nepal",
-        "AFF_ISO" : "NP",
-        "Country_1" : "Nepal",
-        "Count_" : 2,
-        "ObjectID_1" : 55,
-        "GlobalID" : "72e87901-c973-4840-b7d1-a92d6f75f3cf",
-        "2020" : 2,
-        "2010" : 1,
-        "2000" : 1,
-        "1990" : 1,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 179
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 180,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       83.922987274071332,
+    //       28.265473743232754
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 180,
+    //     "COUNTRY" : "Nepal",
+    //     "ISO" : "NP",
+    //     "COUNTRYAFF" : "Nepal",
+    //     "AFF_ISO" : "NP",
+    //     "Country_1" : "Nepal",
+    //     "Count_" : 2,
+    //     "ObjectID_1" : 55,
+    //     "GlobalID" : "72e87901-c973-4840-b7d1-a92d6f75f3cf",
+    //     "2020" : 2,
+    //     "2010" : 1,
+    //     "2000" : 1,
+    //     "1990" : 1,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 179
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 181,
@@ -2002,35 +2002,35 @@ var countrypoints = {
         "ORIG_FID" : 180
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 182,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          51.191270601323417,
-          25.317044952749193
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 182,
-        "COUNTRY" : "Qatar",
-        "ISO" : "QA",
-        "COUNTRYAFF" : "Qatar",
-        "AFF_ISO" : "QA",
-        "Country_1" : "Qatar",
-        "Count_" : 1,
-        "ObjectID_1" : 67,
-        "GlobalID" : "6fefcc73-8e77-4b89-83ee-8075b16c1cd1",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 181
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 182,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       51.191270601323417,
+    //       25.317044952749193
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 182,
+    //     "COUNTRY" : "Qatar",
+    //     "ISO" : "QA",
+    //     "COUNTRYAFF" : "Qatar",
+    //     "AFF_ISO" : "QA",
+    //     "Country_1" : "Qatar",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 67,
+    //     "GlobalID" : "6fefcc73-8e77-4b89-83ee-8075b16c1cd1",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 181
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 183,
@@ -2089,35 +2089,35 @@ var countrypoints = {
         "ORIG_FID" : 183
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 185,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          53.982495292397694,
-          23.435233430883276
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 185,
-        "COUNTRY" : "United Arab Emirates",
-        "ISO" : "AE",
-        "COUNTRYAFF" : "United Arab Emirates",
-        "AFF_ISO" : "AE",
-        "Country_1" : "United Arab Emirates",
-        "Count_" : 1,
-        "ObjectID_1" : 88,
-        "GlobalID" : "cb4e2fb7-d123-4b35-90ea-9ea8ee43f1ec",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 184
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 185,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       53.982495292397694,
+    //       23.435233430883276
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 185,
+    //     "COUNTRY" : "United Arab Emirates",
+    //     "ISO" : "AE",
+    //     "COUNTRYAFF" : "United Arab Emirates",
+    //     "AFF_ISO" : "AE",
+    //     "Country_1" : "United Arab Emirates",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 88,
+    //     "GlobalID" : "cb4e2fb7-d123-4b35-90ea-9ea8ee43f1ec",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 184
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 186,
@@ -2234,35 +2234,35 @@ var countrypoints = {
     //     "ORIG_FID" : 188
     //   }
     // },
-    {
-      "type" : "Feature",
-      "id" : 190,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          103.808051206054,
-          1.3516176392838315
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 190,
-        "COUNTRY" : "Singapore",
-        "ISO" : "SG",
-        "COUNTRYAFF" : "Singapore",
-        "AFF_ISO" : "SG",
-        "Country_1" : "Singapore",
-        "Count_" : 2,
-        "ObjectID_1" : 74,
-        "GlobalID" : "cf0f1fa9-40b6-4bc5-9768-384280caa0b8",
-        "2020" : 2,
-        "2010" : 1,
-        "2000" : 1,
-        "1990" : 1,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 189
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 190,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       103.808051206054,
+    //       1.3516176392838315
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 190,
+    //     "COUNTRY" : "Singapore",
+    //     "ISO" : "SG",
+    //     "COUNTRYAFF" : "Singapore",
+    //     "AFF_ISO" : "SG",
+    //     "Country_1" : "Singapore",
+    //     "Count_" : 2,
+    //     "ObjectID_1" : 74,
+    //     "GlobalID" : "cf0f1fa9-40b6-4bc5-9768-384280caa0b8",
+    //     "2020" : 2,
+    //     "2010" : 1,
+    //     "2000" : 1,
+    //     "1990" : 1,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 189
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 191,
