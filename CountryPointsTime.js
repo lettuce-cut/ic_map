@@ -2536,9 +2536,9 @@ var countrypoints = {
       },
       "properties" : {
         "OBJECTID" : 248,
-        "COUNTRY" : "Russian Federation",
+        "COUNTRY" : "Russia",
         "ISO" : "RU",
-        "COUNTRYAFF" : "Russian Federation",
+        "COUNTRYAFF" : "Russia",
         "AFF_ISO" : "RU",
         "Country_1" : "Russia",
         "Count_" : 114,
