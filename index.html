@@ -150,6 +150,12 @@
           padding: 2px;
           font-weight: bold;
         }
+
+        #clear {
+          border-radius: 20px;
+          border: 1px black solid;
+          padding-block:3px;
+        }
     </style>
 
 </head>
@@ -171,6 +177,9 @@
         <select name="lang" id="lang" class="form-control input-lg">
           <option value="">Select language</option>
         </select>
+        <button id="clear">
+          Reset All
+        </button>
       </div>
       <div id="info2"></div>
     </div>
@@ -256,11 +265,12 @@
     }
 
     //Reset list on click - uh not really sure but it runs when you just click on the map...?
-    // function onMapClick(e) {    
-    //   resetList();
-	  // }
+    function resetButton(e) {  
+      resetList();
+	  }
 
-    // map.on('click', onMapClick);
+    $('#clear').on('click', resetButton)
+    // $('#country, #term, #lang').on('change', function () {
 
     // dropdown 
     var movieData = [];
@@ -319,7 +329,15 @@
           '<option value="' + termlist[i] + '">' + termname  + '</option>';
 
           movieinfo += "<div class='movie'><img src=" + movieData[i].poster + " width='50' style='border-radius:10px;'>"+
-                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>" + "Country: " + movieData[i].country + "<br> Semester: "+ termname;
+                "<a href=" + movieData[i].link + " target='_blank'>"+ " "+ movieData[i].title + "</a></div>" + "Country: " + movieData[i].country + "<br> Semester: "+ termname + "<br> Language(s): ";
+          for (var k = 0; k < movieData[i].languages.length; k++){
+            if (k == movieData[i].languages.length - 1) {
+              movieinfo += movieData[i].languages[k]
+            }
+            else {
+              movieinfo += movieData[i].languages[k]+ ", "
+            }
+          }
         }
         $('#term').append(ddTermhtml);
 
