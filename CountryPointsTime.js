@@ -2553,34 +2553,34 @@ var countrypoints = {
         "ORIG_FID" : 247
       }
     },
-    // {
-    //   "type" : "Feature",
-    //   "id" : 249,
-    //   "geometry" : {
-    //     "type" : "Point",
-    //     "coordinates" : [
-    //       100.74324455387863,
-    //       63.989156815283131
-    //     ]
-    //   },
-    //   "properties" : {
-    //     "OBJECTID" : 249,
-    //     "COUNTRY" : "Soviet Union",
-    //     "ISO" : "SU",
-    //     "COUNTRYAFF" : "Soviet Union",
-    //     "AFF_ISO" : "SU",
-    //     "Country_1" : "Soviet Union",
-    //     "Count_" : 114,
-    //     "ObjectID_1" : 583,
-    //     "GlobalID" : "a0d75909-3b93-4326-ae6c-c85738d532f1",
-    //     "2020" : 114,
-    //     "2010" : 114,
-    //     "2000" : 114,
-    //     "1990" : 98,
-    //     "1980" : 33,
-    //     "1970" : 0,
-    //     "ORIG_FID" : 249
-    //   }
-    // },
+    {
+      "type" : "Feature",
+      "id" : 249,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          100.74324455387863,
+          63.989156815283131
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 249,
+        "COUNTRY" : "Soviet Union",
+        "ISO" : "SU",
+        "COUNTRYAFF" : "Soviet Union",
+        "AFF_ISO" : "SU",
+        "Country_1" : "Soviet Union",
+        "Count_" : 114,
+        "ObjectID_1" : 111,
+        "GlobalID" : "a0d75909-3b93-4326-ae6c-c85738d532f1",
+        "2020" : 114,
+        "2010" : 114,
+        "2000" : 114,
+        "1990" : 98,
+        "1980" : 33,
+        "1970" : 0,
+        "ORIG_FID" : 249
+      }
+    },
   ]
 }
