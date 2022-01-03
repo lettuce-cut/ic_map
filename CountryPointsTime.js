@@ -2205,35 +2205,35 @@ var countrypoints = {
         "ORIG_FID" : 187
       }
     },
-    {
-      "type" : "Feature",
-      "id" : 189,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          101.99234274871517,
-          20.299476387289424
-        ]
-      },
-      "properties" : {
-        "OBJECTID" : 189,
-        "COUNTRY" : "Laos",
-        "ISO" : "LA",
-        "COUNTRYAFF" : "Laos",
-        "AFF_ISO" : "LA",
-        "Country_1" : "Laos",
-        "Count_" : 1,
-        "ObjectID_1" : 48,
-        "GlobalID" : "356c17a1-6852-4b8a-a1e2-56cb87260069",
-        "2020" : 1,
-        "2010" : 0,
-        "2000" : 0,
-        "1990" : 0,
-        "1980" : 0,
-        "1970" : 0,
-        "ORIG_FID" : 188
-      }
-    },
+    // {
+    //   "type" : "Feature",
+    //   "id" : 189,
+    //   "geometry" : {
+    //     "type" : "Point",
+    //     "coordinates" : [
+    //       101.99234274871517,
+    //       20.299476387289424
+    //     ]
+    //   },
+    //   "properties" : {
+    //     "OBJECTID" : 189,
+    //     "COUNTRY" : "Laos",
+    //     "ISO" : "LA",
+    //     "COUNTRYAFF" : "Laos",
+    //     "AFF_ISO" : "LA",
+    //     "Country_1" : "Laos",
+    //     "Count_" : 1,
+    //     "ObjectID_1" : 48,
+    //     "GlobalID" : "356c17a1-6852-4b8a-a1e2-56cb87260069",
+    //     "2020" : 1,
+    //     "2010" : 0,
+    //     "2000" : 0,
+    //     "1990" : 0,
+    //     "1980" : 0,
+    //     "1970" : 0,
+    //     "ORIG_FID" : 188
+    //   }
+    // },
     {
       "type" : "Feature",
       "id" : 190,
