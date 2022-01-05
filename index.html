@@ -382,6 +382,9 @@
       countries.resetStyle();
       $.each(movieData, function (index, value) {
           var n = countrylist.includes(value.country);
+          isCountry = false
+          isTerm = false
+          isLang = false
           if (n == false){
             countrylist.push(value.country);
             countrylist.sort();
